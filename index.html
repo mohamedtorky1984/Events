@@ -9,8 +9,24 @@ p {
   text-align: center;
   font-size: 90px;
   margin-top: 0px;
+ 
 }
-  
+@keyframes color-change {
+  10% { color: red; }
+  50% { color: blue; }
+  70% {color: black;}
+  100% { color: red; }
+}
+h2 {
+ text-align: center;
+  font-size: 90px;
+  margin-top: 0px;
+  animation: color-change 1s infinite;
+
+
+
+
+} 
 .bgimg {
   background-image: url('https://cdn.wallpapersafari.com/3/68/3jc1hM.jpg');
   height: 100%;
@@ -54,9 +70,10 @@ hr {
     <h1>--</h1>
   </div>
   <div class="middle">
-    <h1> Coming Soon</h1>
+    <h1 id="demo1"> Coming Soon</h1>
     <hr>
     <p id="demo"></p>
+	<h2 id="demo2"></h2>
 <script>
 // Set the date we're counting down to
 var countDownDate = new Date("Mar 31, 2022 05:00:00").getTime();
@@ -83,7 +100,9 @@ var x = setInterval(function() {
   // If the count down is over, write some text 
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("demo").innerHTML = "Congratualtion Buccia";
+    document.getElementById("demo1").innerHTML = "";
+	document.getElementById("demo").innerHTML = "";
+    document.getElementById("demo2").innerHTML = "Congratualtion Buccia";
   }
 }, 1000);
 </script>
