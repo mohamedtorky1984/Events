@@ -22,6 +22,13 @@ h2 {
   font-size: 90px;
   margin-top: 0px;
   animation: color-change 1s infinite;
+}
+h1 {
+ text-align: center;
+  font-size: 40px;
+  margin-top: 0px;
+  margin-left: 0px;
+  animation: color-change 1s infinite;
 
 
 
@@ -62,21 +69,32 @@ hr {
   margin: auto;
   width: 40%;
 }
+ul {
+  margin: auto;
+  font-size: 20px;
+   animation: color-change 1s infinite;
+}
 </style>
 <body>
 
 <div class="bgimg">
   <div class="topleft">
-    <h1>--</h1>
+    <h1>Events:-</h1>
+<ul>
+  <li>Buccia already did it [31-03-2022]</li>
+</ul>  
+
   </div>
   <div class="middle">
-    <h1 id="demo1"> Coming Soon</h1>
+    <h1 id="demo1">Coming Soon Antonio's Marriage</h1>
     <hr>
     <p id="demo"></p>
 	<h2 id="demo2"></h2>
+
 <script>
+
 // Set the date we're counting down to
-var countDownDate = new Date("Mar 31, 2022 17:00:00").getTime();
+var countDownDate = new Date("Jul 24, 2022 11:30:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -96,14 +114,33 @@ var x = setInterval(function() {
   // Output the result in an element with id="demo"
   document.getElementById("demo").innerHTML = days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
-    
+
+function add_line() {
+   var line = document.createElement("audio");
+    var head=document.getElementsByTagName('body')[0];
+    line.type = "audio/mp3";
+    line.src="1.mp3";
+    line.id="bgSong" ;
+    line.autoplay = true;
+    head.appendChild(line);
+	}
   // If the count down is over, write some text 
   if (distance < 0) {
     clearInterval(x);
     document.getElementById("demo1").innerHTML = "";
 	document.getElementById("demo").innerHTML = "";
-    document.getElementById("demo2").innerHTML = "Congratualtion Buccia";
-  }
+    document.getElementById("demo2").innerHTML = "Congratualtion Antonio";
+   
+	if(document.getElementById('bgSong')==null){
+        add_line();
+        var audio = document.getElementById('bgSong');
+        audio.volume = 0.5; 
+        audio.play();
+}
+
+}
+	
+	
 }, 1000);
 </script>
     
